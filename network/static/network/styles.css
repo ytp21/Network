@@ -1,0 +1,321 @@
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+.login-register-page {
+    box-shadow: 0px 0px 8px 5px #DCDCDC;
+    border-radius: 10px;
+}
+
+.form-style {
+    border-style: none none solid none;
+    margin-bottom: 20px;
+    width: 85%;
+    border-color: rgb(168, 220, 238);
+    border-width: 3px;
+}
+
+.form-style:focus {
+    outline: none;
+    border-color: #4166f5;
+}
+
+.nav-style {
+    width: 350px;
+}
+
+.logo {
+    width: 60px;
+    height: 60px;
+}
+
+.user-image {
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    margin-left: 16px;
+    margin-right: 12px;
+}
+
+.nav-button {
+    border-radius: 100px;
+    height: 40px;
+    width: 75%;
+    margin-bottom: 10px;
+    text-align: left;
+    border: none;
+    background-color: white;
+    text-decoration: none;
+    color: black;
+    padding-top: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.nav-button:hover { 
+    background-color: #E8E8E8;
+}
+
+.icon-style {
+    margin-left: 22px;
+    margin-right: 16px;
+}
+
+.btn-font {
+    position: relative;
+    top: 3px;
+}
+
+.logout-button {
+    margin-top: 20px;
+    border-radius: 100px;
+    height: 40px;
+    width: 50%;
+    margin-left: 45px;
+    border: none;
+    color: white;
+    font-weight: bold;
+    background-color: #4166f5;
+}
+
+.body-content {
+    width: calc(100% - 670px);
+}
+
+.contact-nav {
+    width: 320px;
+    padding-left: 30px;
+}
+
+.login-btn {
+    margin-top: 20px;
+    border-radius: 100px;
+    height: 40px;
+    width: 75%;
+    margin-left: 25px;
+    border: none;
+    color: white;
+    font-weight: bold;
+    background-color: #4166f5;
+}
+
+.register-btn {
+    margin-top: 20px;
+    border-radius: 100px;
+    height: 40px;
+    width: 75%;
+    margin-left: 25px;
+    border: 2px solid #4166f5;
+    color: #4166f5;
+    font-weight: bold;
+    background-color: white;
+}
+
+.nav-button-focus {
+    background-color: #E8E8E8!important;
+    color: #4166f5!important;
+}
+
+.post_form {
+    background-color: #F5F5F5;
+    border-radius: 10px;
+}
+
+.user-icon {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+}
+
+.form-post-style {
+    border-radius: 100px;
+}
+
+.btn-post-submit {
+    background-color: #4166f5;
+    color: white;
+    font-weight: bold;
+    border-radius: 100px;
+    font-size: 14px;
+    width: 70px;
+}
+
+.page-body-style {
+    display: block;
+    border-radius: 10px;
+    background-color: #F5F5F5;
+    overflow-y: scroll;
+    height: 85vh;
+}
+
+.post_content {
+    background-color: white;
+    border-radius: 10px;
+}
+
+.post-icon {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    margin-top: 12px;
+}
+
+.post-person {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.person-link, .person-link:hover {
+    color: black;
+    text-decoration: none;
+}
+
+.post-username {
+    color: #585858;
+    font-size: 15px;
+    margin-left: 3px;
+}
+
+.post-time {
+    color: #808080;
+    font-size: 13px;
+}
+
+.post-info {
+    display: block;
+    margin-top: 11px;
+}
+
+.post-body {
+    display: block;
+    width: 100%;
+    word-wrap: break-word;
+    padding-right: 10px;
+}
+
+.edit-btn {
+    border: 1px solid #4166f5;
+    border-radius: 100px;
+    font-size: 14px;
+    width: 60px;
+    background-color: white;
+    color: #4166f5;
+    font-weight: bold;
+}
+
+.edit-btn:hover {
+    background-color: #4166f5;
+    color: white;
+}
+
+.profile-cover {
+    border-radius: 10px;
+    height: 180px;
+    width: 100%;
+}
+
+.profile-user-icon {
+    height: 120px;
+    width: 120px;
+    border-radius: 50%;
+    border: 5px solid white;
+    margin-top: 120px;
+}
+
+.profile-info {
+    display: block;
+    margin-top: 70px;
+}
+
+.profile-username {
+    color: grey;
+    font-size: 15px;
+}
+
+.profile-joined {
+    color: grey;
+    font-size: 14px;
+}
+
+.profile-follow {
+    font-weight: bold;
+    font-size: 15px;
+}
+
+
+.followed {
+    border: none;
+    border-radius: 100px;
+    width: 100px;
+    height:35px;
+    background-color: #4166f5;
+    color: white;
+    font-weight: bold;
+    margin-top: 200px;
+    margin-right:20px;
+}
+
+.unfollowed-hover {
+    border: none;
+    border-radius: 100px;
+    width: 100px;
+    height:35px;
+    background-color: rgb(160, 0, 0);
+    color: white;
+    font-weight: bold;
+    margin-top: 200px;
+    margin-right:20px;
+}
+
+.unfollowed {
+    border: 1px solid #4166f5;
+    border-radius: 100px;
+    width: 100px;
+    height:35px;
+    background-color: white;
+    color: #4166f5;
+    font-weight: bold;
+    margin-top: 200px;
+    margin-right:20px;
+}
+
+.like-icon {
+    height: 18px;
+    width: 18px;
+    margin-top: 15px;
+    margin-left: 3px;
+}
+
+.no_of_likes {
+    margin-top: 13px;
+    margin-left: 8px;
+    color: grey;
+    font-size: 14px;
+}
+
+.unlike {
+    color: rgb(92, 91, 91);
+    background-color: white;
+    border: none;
+    font-weight: 500;
+    font-size: 15px;
+    width: 35%;
+    border-radius: 5px;
+    height: 45px;
+}
+
+.unlike:hover, .liked:hover {
+    background-color: #E8E8E8;
+}
+
+.liked {
+    color: #4166f5;
+    background-color: white;
+    border: none;
+    font-weight: 500;
+    font-size: 15px;
+    width: 35%;
+    border-radius: 5px;
+    height: 45px;
+}

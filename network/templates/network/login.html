@@ -1,0 +1,26 @@
+{% extends "network/layout.html" %}
+
+{% block body %}
+<div class="login-register-page mt-3 px-5 py-4 text-center"> 
+    <h4>Sign In</h4>
+
+    <div id="alert-msg"></div>
+    
+    {% if message %}
+        <div>{{ message }}</div>
+    {% endif %}
+
+    <form class="mt-5" action="{% url 'login' %}" method="post">
+        {% csrf_token %}
+        <div class="form-group">
+            <input autofocus class="form-style" type="text" name="username" placeholder="Username">
+        </div>
+        <div class="form-group">
+            <input class="form-style" type="password" name="password" placeholder="Password">
+        </div>
+        <input class="btn btn-primary mt-3 mb-3" type="submit" value="Login">
+    </form>
+
+    Don't have an account? <a href="{% url 'register' %}">Register here.</a>
+</div>
+{% endblock %}

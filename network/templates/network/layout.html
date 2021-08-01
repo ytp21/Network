@@ -1,0 +1,73 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>{% block title %}Social Network{% endblock %}</title>
+        <link class="icon" rel="icon" type="image/png" href="{% static 'network/Network.png' %}">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+        <link href="{% static 'network/styles.css' %}" rel="stylesheet">
+        <script src="{% static 'network/template.js' %}"></script>
+        {% block script %}
+        {% endblock %}
+    </head>
+    <body>
+        <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+            <symbol id="exclamation-triangle-fill" fill="currentColor" viewBox="0 0 16 16">
+              <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+            </symbol>
+        </svg>
+        <div class="d-flex flex-row" style="width: 100%; min-width: 1150px;">
+            <div class="d-flex flex-column nav-style p-3">
+                <img class="logo mb-4" src="{% static 'network/Network.png' %}">
+                {% if user.is_authenticated %}
+                <a id="userProfile" href="{% url 'userProfile' name=user.username %}" class="nav-button"> 
+                    <img class="user-image mb-1" src="{% static 'network/Default_User_Icon.png' %}">
+                    {{ user.first_name }} {{ user.last_name }}
+                </a>
+                {% endif %}
+                <a id="allPosts" value="{{ user.username }}" href="{% url 'index' %}" class="nav-button"> 
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-house icon-style" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M2 13.5V7h1v6.5a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5V7h1v6.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5zm11-11V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"/>
+                        <path fill-rule="evenodd" d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z"/>
+                    </svg>
+                    <span class="btn-font">All Posts</span>
+                </a>
+                <a id="following" href="{% url 'following' %}" class="nav-button"> 
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-hash icon-style mt-1" viewBox="0 0 16 16">
+                        <path d="M8.39 12.648a1.32 1.32 0 0 0-.015.18c0 .305.21.508.5.508.266 0 .492-.172.555-.477l.554-2.703h1.204c.421 0 .617-.234.617-.547 0-.312-.188-.53-.617-.53h-.985l.516-2.524h1.265c.43 0 .618-.227.618-.547 0-.313-.188-.524-.618-.524h-1.046l.476-2.304a1.06 1.06 0 0 0 .016-.164.51.51 0 0 0-.516-.516.54.54 0 0 0-.539.43l-.523 2.554H7.617l.477-2.304c.008-.04.015-.118.015-.164a.512.512 0 0 0-.523-.516.539.539 0 0 0-.531.43L6.53 5.484H5.414c-.43 0-.617.22-.617.532 0 .312.187.539.617.539h.906l-.515 2.523H4.609c-.421 0-.609.219-.609.531 0 .313.188.547.61.547h.976l-.516 2.492c-.008.04-.015.125-.015.18 0 .305.21.508.5.508.265 0 .492-.172.554-.477l.555-2.703h2.242l-.515 2.492zm-1-6.109h2.266l-.515 2.563H6.859l.532-2.563z"/>
+                    </svg>
+                    <span class="btn-font">Following</span>
+                </a>
+                {% if user.is_authenticated %}
+                <button id="logout" onclick="location.replace('/logout');" class="logout-button"> 
+                    Log Out
+                </button>
+                {% endif %}
+            </div>
+            <div class="body-content p-3">
+                {% block body %}
+                {% endblock %}
+            </div>
+            <div class="contact-nav m-3">
+                {% if user.is_authenticated %}
+                <h5 style="margin-top: 40vh; margin-left: 16px;">Welcome to social network</h5>
+                <div class="mt-4 w-100 d-flex justify-content-center">
+                    <img class="logo ms-auto me-auto" src="{% static 'network/Network.png' %}">
+                </div>
+                {% else %}
+                <div class="d-flex flex-column">
+                    <button id="login" onclick="location.replace('/login');" class="login-btn"> 
+                        Log In
+                    </button>
+                    <button id="register" onclick="location.replace('/register');" class="register-btn"> 
+                        Register
+                    </button>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </body>
+</html>
+
